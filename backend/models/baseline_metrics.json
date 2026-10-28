@@ -1,0 +1,28 @@
+{
+  "model_architecture": "TF-IDF (1,2) + Multinomial Logistic Regression (L2, C=1.0)",
+  "total_sample_count": 150,
+  "training_sample_count": 120,
+  "test_sample_count": 30,
+  "class_distribution": {
+    "positive": 50,
+    "negative": 50,
+    "neutral": 50
+  },
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "accuracy": 0.6,
+  "precision_macro": 0.6071,
+  "recall_macro": 0.6,
+  "f1_score_macro": 0.5926,
+  "precision_weighted": 0.6071,
+  "recall_weighted": 0.6,
+  "f1_score_weighted": 0.5926,
+  "confusion_matrix": [
+    [4, 2, 4],
+    [2, 6, 2],
+    [2, 0, 8]
+  ]
+}

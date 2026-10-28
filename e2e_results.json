@@ -1,0 +1,79 @@
+{
+  "timestamp": "2026-10-13T13:33:12.363Z",
+  "allPassed": true,
+  "results": [
+    {
+      "journey": 1,
+      "name": "Search for Jaipur & Open Destination Guide",
+      "passed": true,
+      "details": "Heading: \"Jaipur\", Found INR budget: true"
+    },
+    {
+      "journey": 2,
+      "name": "Explore Catalog & Multidimensional Filters",
+      "passed": true,
+      "details": "India cards: 12, Heritage cards: 7, Paris search match: true"
+    },
+    {
+      "journey": 3,
+      "name": "Destination Guide & Interactive Tabs",
+      "passed": true,
+      "details": "Strengths: true, Caveats: true, Itinerary tab: true, Transit tab: true, Tips tab: true"
+    },
+    {
+      "journey": 4,
+      "name": "Save Destination & Shortlist Persistence Across Routes",
+      "passed": true,
+      "details": "Jaipur persisted: true, Varanasi persisted: true"
+    },
+    {
+      "journey": 5,
+      "name": "Remove Destination from Shortlist",
+      "passed": true,
+      "details": "Varanasi removed: true, Jaipur preserved: true"
+    },
+    {
+      "journey": 6,
+      "name": "Side-by-Side Destination Comparison Matrix",
+      "passed": true,
+      "details": "Jaipur visible: true, Udaipur visible: true"
+    },
+    {
+      "journey": 7,
+      "name": "Trip Cost Calculator Mathematical Arithmetic",
+      "passed": true,
+      "details": "Case 1 (3 pax, 4 days @ ₹6,200 = ₹74,400): true, Case 2 (2 pax, 7 days @ ₹3,200 = ₹44,800): true, Case 3 (2 pax, 7 days @ ₹14,500 = ₹2,03,000): true"
+    },
+    {
+      "journey": 8,
+      "name": "Plan a Trip Preferences & Recommendations with Itinerary Preview",
+      "passed": true,
+      "details": "Matches found: 6, Calculated trip total (₹62,000) verified: true"
+    },
+    {
+      "journey": 9,
+      "name": "Authentication Security, Logout & Protected Route Shielding",
+      "passed": true,
+      "details": "Redirect to login when logged out: true, Invalid credentials error displayed: true"
+    },
+    {
+      "journey": 10,
+      "name": "Empty Search, Missing Destination 404 & Recovery",
+      "passed": true,
+      "details": "Empty search state: true, Reset restored catalogue: true, 404 destination handled gracefully: true"
+    }
+  ],
+  "consoleErrors": [
+    "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "[API Error] /auth/login: Error: Incorrect email or password\n    at apiRequest (http://localhost:5173/src/services/api.js?t=1791880827160:37:10)\n    at async loginUser (http://localhost:5173/src/services/api.js?t=1791880827160:89:15)\n    at async handleSubmit (http://localhost:5173/src/pages/Login.jsx?t=1791880827160:40:5)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "[API Error] /destinations/99999/analytics: Error: Destination with ID 99999 not found\n    at apiRequest (http://localhost:5173/src/services/api.js?t=1791880827160:37:10)\n    at async Promise.all (index 1)",
+    "[API Error] /destinations/99999: Error: Destination with ID 99999 not found\n    at apiRequest (http://localhost:5173/src/services/api.js?t=1791880827160:37:10)\n    at async Promise.all (index 0)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "[API Error] /destinations/99999/analytics: Error: Destination with ID 99999 not found\n    at apiRequest (http://localhost:5173/src/services/api.js?t=1791880827160:37:10)\n    at async Promise.all (index 1)",
+    "Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "[API Error] /destinations/99999: Error: Destination with ID 99999 not found\n    at apiRequest (http://localhost:5173/src/services/api.js?t=1791880827160:37:10)\n    at async Promise.all (index 0)"
+  ],
+  "failedRequests": []
+}

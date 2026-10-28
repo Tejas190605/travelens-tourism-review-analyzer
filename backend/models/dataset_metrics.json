@@ -1,0 +1,33 @@
+{
+  "dataset_name": "TripAdvisor Hotel & Tourism Reviews Benchmark",
+  "dataset_source": "argilla/tripadvisor-hotel-reviews (Hugging Face)",
+  "license": "CC-BY-NC-4.0",
+  "raw_total_reviews": 20491,
+  "missing_reviews_handled": 0,
+  "missing_ratings_handled": 0,
+  "duplicate_reviews_removed": 0,
+  "processed_samples_count": 6000,
+  "sentiment_mapping": {
+    "ratings_1_2": "negative",
+    "rating_3": "neutral",
+    "ratings_4_5": "positive"
+  },
+  "sentiment_distribution": {
+    "negative": 2000,
+    "neutral": 2000,
+    "positive": 2000
+  },
+  "rating_distribution": {
+    "3": 2000,
+    "5": 1202,
+    "2": 1120,
+    "1": 880,
+    "4": 798
+  },
+  "text_statistics": {
+    "average_character_length": 767.9,
+    "median_character_length": 568.5,
+    "min_character_length": 47,
+    "max_character_length": 13501
+  }
+}

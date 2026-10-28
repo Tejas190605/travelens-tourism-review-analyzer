@@ -1,0 +1,26 @@
+{
+  "metric": [
+    "Accuracy",
+    "Macro Precision",
+    "Macro Recall",
+    "Macro F1-Score"
+  ],
+  "baseline_phase_2": [
+    0.6,
+    0.6071,
+    0.6,
+    0.5926
+  ],
+  "improved_phase_3": [
+    0.745,
+    0.7467,
+    0.745,
+    0.7458
+  ],
+  "delta": [
+    0.145,
+    0.1396,
+    0.145,
+    0.1532
+  ]
+}

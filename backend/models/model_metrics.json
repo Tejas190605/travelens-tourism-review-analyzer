@@ -1,0 +1,102 @@
+{
+  "model_architecture": "TF-IDF (1, 2) + Multinomial Logistic Regression (C=1.0)",
+  "dataset_source": "TripAdvisor Hotel & Tourism Reviews Benchmark (argilla/tripadvisor-hotel-reviews)",
+  "total_sample_count": 6000,
+  "training_sample_count": 4800,
+  "test_sample_count": 1200,
+  "class_distribution": {
+    "negative": 2000,
+    "neutral": 2000,
+    "positive": 2000
+  },
+  "labels": [
+    "negative",
+    "neutral",
+    "positive"
+  ],
+  "selected_hyperparameters": {
+    "name": "Config_2_Unigrams_Bigrams_C1.0",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "min_df": 3,
+    "max_features": 8000,
+    "C": 1.0,
+    "class_weight": "balanced"
+  },
+  "cross_validation_results": [
+    {
+      "name": "Config_1_Unigrams_C1.0",
+      "mean_cv_f1_macro": 0.7327,
+      "std_cv_f1_macro": 0.0105,
+      "params": {
+        "name": "Config_1_Unigrams_C1.0",
+        "ngram_range": [
+          1,
+          1
+        ],
+        "min_df": 3,
+        "max_features": 5000,
+        "C": 1.0,
+        "class_weight": "balanced"
+      }
+    },
+    {
+      "name": "Config_2_Unigrams_Bigrams_C1.0",
+      "mean_cv_f1_macro": 0.7384,
+      "std_cv_f1_macro": 0.0125,
+      "params": {
+        "name": "Config_2_Unigrams_Bigrams_C1.0",
+        "ngram_range": [
+          1,
+          2
+        ],
+        "min_df": 3,
+        "max_features": 8000,
+        "C": 1.0,
+        "class_weight": "balanced"
+      }
+    },
+    {
+      "name": "Config_3_Unigrams_Bigrams_C2.0",
+      "mean_cv_f1_macro": 0.7331,
+      "std_cv_f1_macro": 0.0103,
+      "params": {
+        "name": "Config_3_Unigrams_Bigrams_C2.0",
+        "ngram_range": [
+          1,
+          2
+        ],
+        "min_df": 2,
+        "max_features": 10000,
+        "C": 2.0,
+        "class_weight": "balanced"
+      }
+    }
+  ],
+  "accuracy": 0.745,
+  "precision_macro": 0.7467,
+  "recall_macro": 0.745,
+  "f1_score_macro": 0.7458,
+  "precision_weighted": 0.7467,
+  "recall_weighted": 0.745,
+  "f1_score_weighted": 0.7458,
+  "confusion_matrix": [
+    [
+      315,
+      75,
+      10
+    ],
+    [
+      79,
+      260,
+      61
+    ],
+    [
+      5,
+      76,
+      319
+    ]
+  ]
+}

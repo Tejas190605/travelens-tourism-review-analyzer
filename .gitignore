@@ -1,0 +1,67 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.pyd
+
+# Environments & Virtual Envs
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+ENV/
+env/
+backend/.venv/
+*/.venv/
+
+# SQLite Databases & Backups (Excluded for security & reproducibility; seed via backend/scripts/seed_db.py)
+*.db
+*.db*
+*.sqlite
+*.sqlite3
+*.backup
+*.audit_backup
+*.pre_recovery_backup
+test_travelens.db*
+travelens.db*
+
+# Distribution / packaging / builds
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+frontend/dist/
+frontend/.vite/
+
+# Unit test / coverage / Playwright
+.pytest_cache/
+.coverage
+htmlcov/
+test-results/
+.playwright/
+playwright-report/
+
+# Node / Frontend dependencies
+node_modules/
+*/node_modules/
+frontend/node_modules/
+
+# IDE & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.local
+
