@@ -17,7 +17,28 @@ from app.api.feedback import router as feedback_router
 async def lifespan(app: FastAPI):
     # 1. Ensure all database tables exist (e.g. saved_destinations)
     Base.metadata.create_all(bind=engine)
-    # 2. Warm up ML artifacts into memory to eliminate cold-start inference latency
+
+    # 2. Automatically seed demo dataset if running with a fresh/empty database
+    try:
+        from app.db.database import SessionLocal
+        from app.db.models import Destination
+        db = SessionLocal()
+        dest_count = db.query(Destination).count()
+        db.close()
+        if dest_count == 0:
+            print("[Startup] Database is empty. Seeding destinations and review corpus...")
+            import sys
+            from pathlib import Path
+            backend_dir = Path(__file__).resolve().parent.parent
+            if str(backend_dir) not in sys.path:
+                sys.path.insert(0, str(backend_dir))
+            from scripts.seed_db import seed_database
+            seed_database(clean_first=False)
+            print("[Startup] Demo database seeded successfully.")
+    except Exception as e:
+        print(f"[Warning] Startup auto-seed check skipped: {e}")
+
+    # 3. Warm up ML artifacts into memory to eliminate cold-start inference latency
     try:
         load_model_artifacts()
         predict_sentiment("warmup scenic destination")
@@ -35,9 +56,12 @@ app = FastAPI(
 )
 
 # CORS middleware for React SPA communication
+raw_origins = [o.strip() for o in settings.ALLOWED_ORIGINS.split(",") if o.strip()]
+cors_origins = ["*"] if not raw_origins or "*" in raw_origins else raw_origins
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Permits local development ports (Vite 5173, etc.)
+    allow_origins=cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -1,9 +1,11 @@
 /**
  * Centralized TRAVELENS API Service
  * Interacts with FastAPI backend REST endpoints.
+ * Dynamically supports VITE_API_BASE_URL for cloud deployments.
  */
 
-const API_BASE = '/api';
+const RAW_BASE = import.meta.env.VITE_API_BASE_URL || '';
+const API_BASE = RAW_BASE ? `${RAW_BASE.replace(/\/+$/, '')}/api` : '/api';
 
 export const tokenStorage = {
   get: () => localStorage.getItem('travelens_token'),

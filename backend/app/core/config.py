@@ -19,6 +19,7 @@ class Settings(BaseSettings):
     SECRET_KEY: str = "dev-secret-key-travelens-review-analyzer-2026"
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 60 * 24  # 24 hours
+    ALLOWED_ORIGINS: str = "*"
 
     # Paths
     MODELS_DIR: Path = BACKEND_DIR / "models"
