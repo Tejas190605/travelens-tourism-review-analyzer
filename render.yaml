@@ -26,10 +26,9 @@ services:
   # -------------------------------------------------------------
   # 2. TRAVELENS Frontend Static Site (React 18 / Vite)
   # -------------------------------------------------------------
-  - type: static
+  - type: web
     name: travelens-frontend
-    region: oregon
-    plan: free
+    runtime: static
     rootDir: frontend
     buildCommand: npm install && npm run build
     staticPublishPath: dist
