@@ -4,7 +4,10 @@
  * Dynamically supports VITE_API_BASE_URL for cloud deployments.
  */
 
-const RAW_BASE = import.meta.env.VITE_API_BASE_URL || '';
+let RAW_BASE = import.meta.env.VITE_API_BASE_URL || '';
+if (RAW_BASE && !RAW_BASE.startsWith('http://') && !RAW_BASE.startsWith('https://') && !RAW_BASE.startsWith('/')) {
+  RAW_BASE = `https://${RAW_BASE}`;
+}
 const API_BASE = RAW_BASE ? `${RAW_BASE.replace(/\/+$/, '')}/api` : '/api';
 
 export const tokenStorage = {
