@@ -28,10 +28,11 @@ TRAVELENS is an academic and enterprise engineering platform designed to resolve
 | **GitHub Target URL** | `https://github.com/Tejas190605/travelens-tourism-review-analyzer` |
 | **Git Default Branch** | `main` |
 | **Repository Visibility** | **Private** (Recommended until teacher approval) |
-| **Cloud Hosting Platform** | Render ([render.com](https://render.com)) — Free Tier |
-| **Frontend Public URL** | `https://travelens-frontend.onrender.com` (After Render deployment) |
-| **Backend API URL** | `https://travelens-backend.onrender.com` (After Render deployment) |
-| **API Documentation URL** | `https://travelens-backend.onrender.com/docs` (Swagger UI) |
+| **Frontend Cloud Hosting** | **Netlify** ([netlify.com](https://netlify.com)) — Free Tier Static SPA |
+| **Backend Cloud Hosting** | **Render** ([render.com](https://render.com)) — Free Tier Python Web Service |
+| **Frontend Public URL** | `https://<your-site-name>.netlify.app` (After Netlify deployment) |
+| **Backend API URL** | `https://<your-backend-service>.onrender.com` (After Render deployment) |
+| **API Documentation URL** | `https://<your-backend-service>.onrender.com/docs` (Swagger UI) |
 | **Database Persistence** | Auto-Seeded SQLite (Self-healing demo data) or External PostgreSQL |
 
 ---
@@ -56,7 +57,8 @@ TRAVELENS is an academic and enterprise engineering platform designed to resolve
 | [`PROJECT_RECOVERY_REPORT.md`](PROJECT_RECOVERY_REPORT.md) | Complete inventory of where the project stopped and what was audited |
 | [`PRE_DEPLOYMENT_TEST_REPORT.md`](PRE_DEPLOYMENT_TEST_REPORT.md) | Exact automated test outputs (78 pytest tests, oxlint, vite build) |
 | [`GITHUB_SHARING_GUIDE.md`](GITHUB_SHARING_GUIDE.md) | Step-by-step instructions for GitHub setup, inviting collaborators, and local reproduction |
-| [`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md) | Comprehensive free cloud hosting guide for Render (Blueprint & Manual methods) |
+| [`DEPLOYMENT_GUIDE.md`](DEPLOYMENT_GUIDE.md) | Comprehensive cloud hosting guide for Render |
+| [`NETLIFY_DEPLOYMENT_GUIDE.md`](NETLIFY_DEPLOYMENT_GUIDE.md) | Dedicated guide for deploying the React frontend on Netlify |
 | [`BTECH_FINAL_PROJECT_REPORT.md`](BTECH_FINAL_PROJECT_REPORT.md) | Academic thesis report covering problem statement, methodology, and evaluation |
 | [`VIVA_QUESTIONS_AND_ANSWERS.md`](VIVA_QUESTIONS_AND_ANSWERS.md) | Complete viva voce defense preparation guide |
 | [`DEMO_SCRIPT.md`](DEMO_SCRIPT.md) | Step-by-step 10-minute presentation script for teacher demonstration |
