@@ -56,12 +56,19 @@ app = FastAPI(
 )
 
 # CORS middleware for React SPA communication
+DEFAULT_ORIGINS = [
+    "https://travelens-frontend.onrender.com",
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+]
 raw_origins = [o.strip() for o in settings.ALLOWED_ORIGINS.split(",") if o.strip()]
-cors_origins = ["*"] if not raw_origins or "*" in raw_origins else raw_origins
+cors_origins = list(dict.fromkeys(DEFAULT_ORIGINS + [o for o in raw_origins if o != "*"]))
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=cors_origins,
+    allow_origins=cors_origins if cors_origins else ["*"],
+    allow_origin_regex=r"https://.*\.onrender\.com",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

@@ -4,11 +4,18 @@
  * Dynamically supports VITE_API_BASE_URL for cloud deployments.
  */
 
-let RAW_BASE = import.meta.env.VITE_API_BASE_URL || '';
-if (RAW_BASE && !RAW_BASE.startsWith('http://') && !RAW_BASE.startsWith('https://') && !RAW_BASE.startsWith('/')) {
-  RAW_BASE = `https://${RAW_BASE}`;
+let RAW_BASE = (import.meta.env.VITE_API_BASE_URL || '').trim();
+if (RAW_BASE) {
+  if (!RAW_BASE.startsWith('http://') && !RAW_BASE.startsWith('https://') && !RAW_BASE.startsWith('/')) {
+    RAW_BASE = `https://${RAW_BASE}`;
+  }
+  RAW_BASE = RAW_BASE.replace(/\/+$/, '');
+  // Prevent duplicating /api if already supplied in VITE_API_BASE_URL
+  if (RAW_BASE.endsWith('/api')) {
+    RAW_BASE = RAW_BASE.slice(0, -4);
+  }
 }
-const API_BASE = RAW_BASE ? `${RAW_BASE.replace(/\/+$/, '')}/api` : '/api';
+const API_BASE = RAW_BASE ? `${RAW_BASE}/api` : '/api';
 
 export const tokenStorage = {
   get: () => localStorage.getItem('travelens_token'),
